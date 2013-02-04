@@ -10,4 +10,6 @@ package no.finntech.core.calculator;
 public interface CalculatorService {
 
     double add(double arg1, double arg2);
+
+    String ping();
 }

@@ -31,6 +31,12 @@ public class CalculatorResource {
     }
 
     @GET
+    @Path("/ping")
+    public Response ping() {
+        return Response.ok(calculatorService.ping()).build();
+    }
+
+    @GET
     @Path("/hello")
     public Response hello() {
         return Response.ok("Hello").build();

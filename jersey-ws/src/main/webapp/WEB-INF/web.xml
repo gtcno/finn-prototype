@@ -14,7 +14,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>no.finntech.core.CoreConfig</param-value>
+        <param-value>no.finntech.core.CoreConfig,no.finntech.rest.RestConfig</param-value>
     </context-param>
 
     <listener>
@@ -28,12 +28,6 @@
         <servlet-class>
             com.sun.jersey.spi.spring.container.servlet.SpringServlet
         </servlet-class>
-        <init-param>
-            <param-name>
-                com.sun.jersey.config.property.packages
-            </param-name>
-            <param-value>no.finntech.rest.calculator</param-value>
-        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 

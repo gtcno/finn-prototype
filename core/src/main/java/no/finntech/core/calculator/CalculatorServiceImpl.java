@@ -17,4 +17,9 @@ public class CalculatorServiceImpl implements CalculatorService {
     public double add(double arg1, double arg2) {
         return arg1 + arg2;
     }
+
+    @Override
+    public String ping() {
+        return "ping";
+    }
 }
