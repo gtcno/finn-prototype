@@ -1,0 +1,34 @@
+version = '1.0'
+
+allprojects {
+    group = 'no.finntech'
+
+    apply plugin: "idea"
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    version = rootProject.version
+    sourceCompatibility = '1.7'
+
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file('build/classes/main')
+        testOutputDir = file('build/classes/test')
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.4'
+}
+
+
+
