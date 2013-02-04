@@ -12,5 +12,5 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan("no.finntech.core")
-public class CoreApplicationContext {
+public class CoreConfig {
 }

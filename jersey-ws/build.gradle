@@ -1,1 +1,20 @@
 apply plugin: 'jetty'
+
+def jerseyVersion = 1.17
+
+dependencies {
+
+    //Module deps
+    compile project(':core')
+
+    //Spring web
+    compile "org.springframework:spring-web:3.2.1.RELEASE"
+
+    //Jersey core
+    compile "com.sun.jersey:jersey-bundle:$jerseyVersion"
+    compile "asm:asm:3.3.1"
+
+    //Spring integration
+    compile "com.sun.jersey.contribs:jersey-spring:$jerseyVersion"
+
+}

@@ -13,6 +13,14 @@ allprojects {
 subprojects {
     apply plugin: 'java'
 
+    idea {
+        module {
+            inheritOutputDirs = false
+            outputDir = file('build/classes/main')
+            testOutputDir = file('build/classes/test')
+        }
+    }
+
     version = rootProject.version
     sourceCompatibility = '1.7'
 
@@ -22,13 +30,7 @@ subprojects {
 
 }
 
-idea {
-    module {
-        inheritOutputDirs = false
-        outputDir = file('build/classes/main')
-        testOutputDir = file('build/classes/test')
-    }
-}
+
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.4'

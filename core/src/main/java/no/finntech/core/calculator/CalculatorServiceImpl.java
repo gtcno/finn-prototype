@@ -12,12 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
 
+
     @Override
-    public double add(double... args) {
-        double result = 0;
-        for (double arg : args) {
-            result += arg;
-        }
-        return result;
+    public double add(double arg1, double arg2) {
+        return arg1 + arg2;
     }
 }

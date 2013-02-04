@@ -9,5 +9,5 @@ package no.finntech.core.calculator;
  */
 public interface CalculatorService {
 
-    double add(double... args);
+    double add(double arg1, double arg2);
 }
