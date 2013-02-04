@@ -7,6 +7,9 @@ allprojects {
 
     repositories {
         mavenCentral()
+        maven {
+            url "http://repo.springsource.org/release"
+        }
     }
 }
 
@@ -15,6 +18,10 @@ subprojects {
 
     version = rootProject.version
     sourceCompatibility = '1.7'
+
+    dependencies {
+        compile "org.springframework:spring-context:3.2.1.RELEASE"
+    }
 
 }
 
