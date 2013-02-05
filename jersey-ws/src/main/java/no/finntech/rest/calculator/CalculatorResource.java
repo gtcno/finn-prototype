@@ -38,7 +38,7 @@ public class CalculatorResource {
 
     @GET
     @Path("/hello")
-    public Response hello() {
-        return Response.ok("Hello").build();
+    public Response hello(@QueryParam("name") String name) {
+        return Response.ok("Hello " + name).build();
     }
 }
