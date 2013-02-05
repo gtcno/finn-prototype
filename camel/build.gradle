@@ -1,5 +1,10 @@
 apply plugin: 'jetty'
 
+jettyRun{
+    daemon = true
+    httpPort = 8081
+}
+
 
 def camelVersion = "2.10.3"
 

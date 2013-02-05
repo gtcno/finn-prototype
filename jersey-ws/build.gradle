@@ -2,6 +2,11 @@ apply plugin: 'jetty'
 
 def jerseyVersion = 1.17
 
+jettyRun{
+    daemon = true
+    httpPort = 8080
+}
+
 dependencies {
 
     //Module deps
