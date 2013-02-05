@@ -36,8 +36,8 @@ public class CalculatorRouteTest extends AbstractJUnit4SpringContextTests {
                 weaveAddLast().to("mock:output");
             }
         });
-        resultEndpoint.expectedBodiesReceived(1);
-        template.sendBody(1);
+        resultEndpoint.expectedBodiesReceived(2);
+        template.sendBody(new AddMessage(1, 1));
         resultEndpoint.assertIsSatisfied();
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Calculator {
 
-    public int add (int i, int j){
-        return i+j;
+    public int add (AddMessage message){
+        return message.getFirst()+message.getSecond();
     }
 }
