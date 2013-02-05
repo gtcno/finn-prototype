@@ -9,6 +9,8 @@ jettyRun{
 def camelVersion = "2.10.3"
 
 dependencies {
+    compile project(':core')
+
 
     //camel
     compile "org.apache.camel:camel-core:$camelVersion"
