@@ -1,0 +1,21 @@
+apply plugin: 'jetty'
+
+
+def camelVersion = "2.10.3"
+
+dependencies {
+
+    //camel
+    compile "org.apache.camel:camel-core:$camelVersion"
+    compile "org.apache.camel:camel-spring:$camelVersion"
+    compile 'org.apache.camel:camel-spring-javaconfig:2.10.3'
+    compile 'org.apache.activemq:activemq-camel:5.7.0'
+    compile 'org.apache.activemq:activemq-core:5.7.0'
+
+
+    //Spring web
+    compile "org.springframework:spring-web:3.2.1.RELEASE"
+
+
+
+}

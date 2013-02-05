@@ -1,2 +1,3 @@
 include 'core'
 include 'jersey-ws'
+include 'camel'

@@ -14,7 +14,7 @@ dependencies {
     compile "com.sun.jersey:jersey-bundle:$jerseyVersion"
     compile "asm:asm:3.3.1"
 
-    //Spring integration
+    //Spring jersey contrib
     compile "com.sun.jersey.contribs:jersey-spring:$jerseyVersion"
 
 }
