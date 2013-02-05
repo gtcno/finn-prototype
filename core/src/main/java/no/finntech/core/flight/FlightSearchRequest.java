@@ -20,7 +20,7 @@ public final class FlightSearchRequest implements Serializable {
     }
 
     public Date getDepartureDate() {
-        return departureDate;
+        return gdepartureDate;
     }
 
     public Date getReturnDate() {
