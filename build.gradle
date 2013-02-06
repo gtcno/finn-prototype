@@ -23,7 +23,8 @@ subprojects {
 
     version = rootProject.version
     sourceCompatibility = '1.7'
-
+    targetCompatibility = '1.6'
+ 
     dependencies {
         compile "org.springframework:spring-context:3.2.1.RELEASE"
         testCompile "junit:junit:4.+"
