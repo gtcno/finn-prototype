@@ -30,7 +30,7 @@ public class CalculatorResource {
     @Produces(MediaType.TEXT_PLAIN)
     public Response add(@QueryParam("arg1") double arg1, @QueryParam("arg2") double arg2) {
         double result = calculatorService.add(arg1, arg2);
-        String resultString = String.fromValue (result);
+        String resultString = String.valueOf(result);
         return Response.ok().entity(resultString).build();
     }
 
