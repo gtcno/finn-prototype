@@ -8,6 +8,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,9 +27,11 @@ public class CalculatorResource {
 
     @GET
     @Path("/add")
+    @Produces(MediaType.TEXT_PLAIN)
     public Response add(@QueryParam("arg1") double arg1, @QueryParam("arg2") double arg2) {
         double result = calculatorService.add(arg1, arg2);
-        return Response.ok().entity(result).build();
+        String resultString = String.fromValue (result);
+        return Response.ok().entity(resultString).build();
     }
 
     @GET
