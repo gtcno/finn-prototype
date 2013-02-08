@@ -1,0 +1,40 @@
+//todo Extract this, and apply to all wsdl projects.
+configurations {
+    cxf
+}
+
+dependencies {
+    cxf "org.apache.cxf:cxf-tools-wsdlto-frontend-jaxws:2.7.3"
+    cxf "org.apache.cxf:cxf-tools-wsdlto-databinding-jaxb:2.7.3"
+    cxf "org.apache.cxf:cxf-tools-common:2.7.3"
+    cxf "org.apache.cxf:cxf-tools-wsdlto-core:2.7.3"
+}
+
+// Custom task to generate Java classes
+// from WSDL.
+task wsdl2java(type: JavaExec) {
+    ext {
+        //todo  Remove hardcoding and loop through all wsdls.
+        wsdlFile = "${project.projectDir}/src/main/wsdl/calculator.wsdl"
+        outputDir = file("$buildDir/src.gen")
+    }
+
+    inputs.file file(wsdlFile)
+    outputs.dir outputDir
+
+    // Main Java class to invoke.
+    main = 'org.apache.cxf.tools.wsdlto.WSDLToJava'
+
+    // Set classpath to dependencies assigned
+    // to the cxf configuration.
+    classpath = configurations.cxf
+
+    // Arguments to be passed to WSDLToJava.
+    args '-d', outputDir
+    args '-client'
+    args '-verbose'
+    args '-validate'
+    args wsdlFile
+}
+
+compileJava.dependsOn wsdl2java
