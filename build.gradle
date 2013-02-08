@@ -1,16 +1,18 @@
 version = '1.0'
 
+def javaProjects() {
+    return subprojects.findAll { new File(it.projectDir, "src").exists() }
+}
+
 allprojects {
-    group = 'no.finntech'
-
     apply plugin: "idea"
-
     repositories {
         mavenCentral()
     }
 }
 
-subprojects {
+configure(javaProjects()) {
+    group = 'no.finntech'
     apply plugin: 'java'
 
     idea {
@@ -23,15 +25,14 @@ subprojects {
 
     version = rootProject.version
     sourceCompatibility = '1.7'
- 
+
     dependencies {
         compile "org.springframework:spring-context:3.2.1.RELEASE"
         testCompile "junit:junit:4.+"
+
+
     }
-
 }
-
-
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.4'
